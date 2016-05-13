@@ -18,6 +18,17 @@
 %
 \RequirePackage{etoolbox}
 
+% Draft: ddraft/dfinal
+%   In draft mode, the following changes are made:
+%     1. Certificate is not included at the beginning of the dissertation.
+\newtoggle{DissertateDraft}
+\togglefalse{DissertateDraft}
+\DeclareOption{ddraft}{
+    \toggletrue{DissertateDraft}
+    \ClassWarning{Dissertate}{Draft mode on.}
+}
+\DeclareOption{dfinal}{\togglefalse{DissertateDraft}}
+
 % Line spacing: dsingle/ddouble
 %   Whether to use single- or doublespacing.
 \newtoggle{DissertateSingleSpace}
